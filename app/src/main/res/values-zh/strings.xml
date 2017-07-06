@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GlockChem4Droid</string>
+    <string name="input_equation">请输入反应方程式：</string>
+    <string name="confirm">确定</string>
+    <string name="clear">清空</string>
+    <string name="clear_success">清除成功！</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">GlockChem4Droid</string>
+    <string name="input_equation">Input reaction equation:</string>
+    <string name="confirm">Confirm</string>
+    <string name="clear">Clear</string>
+    <string name="clear_success">Successfully cleared!</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GlockChem4Droid</string>
+    <string name="input_equation">化学反応式を入力してください：</string>
+    <string name="confirm">決定します</string>
+    <string name="clear">クリア</string>
+    <string name="clear_success">正常にクリアされました。</string>
+</resources>
