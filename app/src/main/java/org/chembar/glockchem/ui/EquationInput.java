@@ -1,4 +1,4 @@
-package org.chembar.glockchem;
+package org.chembar.glockchem.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.chembar.glockchem.R;
 
 public class EquationInput extends AppCompatActivity {
 
