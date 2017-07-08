@@ -5,4 +5,6 @@
     <string name="confirm">确定</string>
     <string name="clear">清空</string>
     <string name="clear_success">清空成功！</string>
+    <string name="parse_error">方程式分析错误：[errinfo]</string>
+    <string name="parse_success">方程式分析成功！</string>
 </resources>

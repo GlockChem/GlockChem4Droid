@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.chembar.glockchem.R;
+import org.chembar.glockchem.core.Equation;
 
 public class EquationInput extends AppCompatActivity {
 
@@ -34,7 +35,17 @@ public class EquationInput extends AppCompatActivity {
                 EditText txtEquation = (EditText) findViewById(R.id.editEquation);
                 String strEquation = txtEquation.getText().toString();
 
-                // TODO: 实现输入方程式的分析
+                // 实现输入方程式的分析
+                try {
+                    // 尝试根据当前用户输入的方程式，创建一个新的Equation对象
+                    Equation equation = new Equation(strEquation);
+                    // 能走到这里，说明至少分析成功了
+                    Toast.makeText(EquationInput.this, getString(R.string.parse_success), Toast.LENGTH_SHORT).show();
+                    // TODO: 方程式条件的输入和处理
+                } catch (Exception e) {
+                    // 输出错误信息
+                    Toast.makeText(EquationInput.this, getString(R.string.parse_error).replace("[errinfo]", e.getMessage()), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

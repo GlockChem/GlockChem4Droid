@@ -4,4 +4,6 @@
     <string name="confirm">Confirm</string>
     <string name="clear">Clear</string>
     <string name="clear_success">Successfully cleared!</string>
+    <string name="parse_error">Parse error: [errinfo]</string>
+    <string name="parse_success">Successfully parsed the equation!</string>
 </resources>
