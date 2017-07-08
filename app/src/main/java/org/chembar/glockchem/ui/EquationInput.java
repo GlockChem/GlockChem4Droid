@@ -22,7 +22,19 @@ public class EquationInput extends AppCompatActivity {
             public void onClick(View v) {
                 EditText txtEquation = (EditText)findViewById(R.id.editEquation);
                 txtEquation.setText(null);
-                Toast.makeText(EquationInput.this, EquationInput.this.getString(R.string.clear_success), Toast.LENGTH_SHORT).show();
+                Toast.makeText(EquationInput.this, getString(R.string.clear_success), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button btnConfirm = (Button) findViewById(R.id.buttonConfirm);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 获取方程式字符串
+                EditText txtEquation = (EditText) findViewById(R.id.editEquation);
+                String strEquation = txtEquation.getText().toString();
+
+                // TODO: 实现输入方程式的分析
             }
         });
     }

@@ -4,5 +4,5 @@
     <string name="input_equation">请输入反应方程式：</string>
     <string name="confirm">确定</string>
     <string name="clear">清空</string>
-    <string name="clear_success">清除成功！</string>
+    <string name="clear_success">清空成功！</string>
 </resources>
