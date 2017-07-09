@@ -2,13 +2,15 @@ package org.chembar.glockchem.core;
 // 并未完成
 // TODO:完善
 
+import java.io.Serializable;
+
 /**
  * 矩阵类
  * <p>为配合{@link EquationBalancer#balanceGaussian()}而写的一个矩阵的简易实现。</p>
  *
  * @author DuckSoft
  */
-public final class Matrix {
+public final class Matrix implements Serializable {
     public int[][] matrix;
 
     /**

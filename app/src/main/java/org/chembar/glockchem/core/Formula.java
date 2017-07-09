@@ -1,5 +1,6 @@
 package org.chembar.glockchem.core;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -11,7 +12,7 @@ import java.util.regex.Pattern;
  * @author DuckSoft
  * @version 0.4 Stable
  */
-public class Formula {
+public class Formula implements Serializable {
 
     /**
      * 化学式原始字符串

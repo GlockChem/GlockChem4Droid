@@ -1,5 +1,6 @@
 package org.chembar.glockchem.core;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,15 +9,15 @@ import java.util.List;
  *
  * @author DuckSoft
  */
-public class Equation {
+public class Equation implements Serializable {
     /**
      * 反应物列表
      */
-    public List<Pair<Formula, Integer>> reactant = new ArrayList<Pair<Formula, Integer>>();
+    public ArrayList<Pair<Formula, Integer>> reactant = new ArrayList<Pair<Formula, Integer>>();
     /**
      * 生成物列表
      */
-    public List<Pair<Formula, Integer>> product = new ArrayList<Pair<Formula, Integer>>();
+    public ArrayList<Pair<Formula, Integer>> product = new ArrayList<Pair<Formula, Integer>>();
 
     public Equation() {
 

@@ -1,5 +1,7 @@
 package org.chembar.glockchem.core;
 
+import java.io.Serializable;
+
 /**
  * Pair
  *
@@ -7,7 +9,7 @@ package org.chembar.glockchem.core;
  * @param <R> Pair右侧类型
  * @author DuckSoft
  */
-public class Pair<L, R> {
+public class Pair<L, R> implements Serializable {
     private L l;
     private R r;
 
