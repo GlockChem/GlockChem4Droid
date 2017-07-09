@@ -1,5 +1,6 @@
 package org.chembar.glockchem.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.Toast;
 
 import org.chembar.glockchem.R;
 import org.chembar.glockchem.core.Equation;
+import org.chembar.glockchem.core.EquationBalancer;
+
+import java.io.Serializable;
 
 public class EquationInput extends AppCompatActivity {
 
@@ -39,9 +43,22 @@ public class EquationInput extends AppCompatActivity {
                 try {
                     // 尝试根据当前用户输入的方程式，创建一个新的Equation对象
                     Equation equation = new Equation(strEquation);
-                    // 能走到这里，说明至少分析成功了
-                    Toast.makeText(EquationInput.this, getString(R.string.parse_success), Toast.LENGTH_SHORT).show();
-                    // TODO: 方程式条件的输入和处理
+                    // 用高斯消元引擎进行配平
+                    EquationBalancer equationBalancer = new EquationBalancer(equation);
+                    if (equationBalancer.balanceGaussian()) {
+                        // 配平成功，继续计算
+                        Toast.makeText(EquationInput.this, getString(R.string.parse_success), Toast.LENGTH_SHORT).show();
+                    } else {
+                        // 配平失败，报错退出
+                        Toast.makeText(EquationInput.this, getString(R.string.balance_failed), Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    // 成功分析并配平
+
+                    // 尝试启动
+                    Intent intent = new Intent(EquationInput.this, ConditionInput.class);
+                    intent.putExtra("equation", equation);
+                    startActivity(intent);
                 } catch (Exception e) {
                     // 输出错误信息
                     Toast.makeText(EquationInput.this, getString(R.string.parse_error).replace("[errinfo]", e.getMessage()), Toast.LENGTH_SHORT).show();

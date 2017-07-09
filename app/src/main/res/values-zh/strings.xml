@@ -7,4 +7,11 @@
     <string name="clear_success">清空成功！</string>
     <string name="parse_error">方程式分析错误：[errinfo]</string>
     <string name="parse_success">方程式分析成功！</string>
+    <string name="input_condition">选择一个物质并指明条件以继续计算：</string>
+    <string name="substance_choose">选择物质：</string>
+    <string name="condition_type">条件类型：</string>
+    <string name="equation_hint">方程式：[equation]</string>
+    <string name="balance_failed">无法配平方程式！</string>
+    <string name="condition_type_mass">质量 (g)</string>
+    <string name="condition_type_mole">物质的量 (mol)</string>
 </resources>

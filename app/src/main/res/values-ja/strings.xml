@@ -5,4 +5,5 @@
     <string name="confirm">決定します</string>
     <string name="clear">クリア</string>
     <string name="clear_success">正常にクリアされました。</string>
+    <string name="equation_hint">化学反応式：[equation]</string>
 </resources>

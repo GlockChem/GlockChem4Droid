@@ -6,4 +6,11 @@
     <string name="clear_success">Successfully cleared!</string>
     <string name="parse_error">Parse error: [errinfo]</string>
     <string name="parse_success">Successfully parsed the equation!</string>
+    <string name="input_condition">Choose a substance and specify condition to calculate:</string>
+    <string name="substance_choose">Substance:</string>
+    <string name="condition_type">Type:</string>
+    <string name="equation_hint">Equation: [equation]</string>
+    <string name="balance_failed">Failed to balance the equation!</string>
+    <string name="condition_type_mass">Mass (g)</string>
+    <string name="condition_type_mole">Mole (mol)</string>
 </resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.chembar.glockchem.ui.ConditionInput">
+
+    <RelativeLayout
+        android:layout_width="304dp"
+        android:layout_height="437dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textInputCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input_condition"
+            android:layout_below="@+id/textEquation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:id="@+id/spinnerSubstance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textInputCondition"
+            android:layout_toEndOf="@+id/textSubstanceChoose"
+            android:layout_toRightOf="@+id/textSubstanceChoose"
+            android:spinnerMode="dialog" />
+
+        <TextView
+            android:id="@+id/textSubstanceChoose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textInputCondition"
+            android:gravity="center_vertical"
+            android:text="@string/substance_choose"
+            android:textAllCaps="false"
+            android:layout_above="@+id/spinnerConditionType" />
+
+        <TextView
+            android:id="@+id/textConditionType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/spinnerConditionType"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textSubstanceChoose"
+            android:gravity="center_vertical"
+            android:text="@string/condition_type"
+            android:layout_toStartOf="@+id/spinnerSubstance" />
+
+        <Spinner
+            android:id="@+id/spinnerConditionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinnerSubstance"
+            android:layout_toEndOf="@+id/textConditionType"
+            android:layout_toRightOf="@+id/textConditionType"
+            android:spinnerMode="dialog" />
+
+        <TextView
+            android:id="@+id/textEquation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="[equation]" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
