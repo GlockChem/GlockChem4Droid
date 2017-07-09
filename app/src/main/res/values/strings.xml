@@ -18,4 +18,9 @@
     <string name="equation_empty_side">Either side of the equation input is empty!</string>
     <string name="equation_empty_first_item">The first item of one side is empty!</string>
     <string name="equation_empty_inner_item">One inner item of one side is empty!</string>
+    <string name="_continue">Continue</string>
+    <string name="copy_equation">Copy Equation</string>
+    <string name="_return">Go Back</string>
+    <string name="equation_copied">Equation copied!</string>
+    <string name="condition_value">Value:</string>
 </resources>

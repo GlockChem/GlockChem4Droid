@@ -6,4 +6,6 @@
     <string name="clear">クリア</string>
     <string name="clear_success">正常にクリアされました。</string>
     <string name="equation_hint">化学反応式：[equation]</string>
+    <string name="_continue">次へ</string>
+    <string name="_return"></string>
 </resources>

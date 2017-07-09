@@ -19,4 +19,9 @@
     <string name="equation_empty_side">所输入的反应物或生成物为空</string>
     <string name="equation_empty_first_item">列表开头遇到空白项！</string>
     <string name="equation_empty_inner_item">列表内遇到空白项！</string>
+    <string name="_continue">继续</string>
+    <string name="copy_equation">复制方程式</string>
+    <string name="_return">返回</string>
+    <string name="equation_copied">方程式已复制到剪贴板！</string>
+    <string name="condition_value">条件数值：</string>
 </resources>

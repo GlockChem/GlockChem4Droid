@@ -10,16 +10,16 @@
         android:layout_width="304dp"
         android:layout_height="437dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="7dp">
 
         <TextView
             android:id="@+id/textInputCondition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/input_condition"
-            android:layout_below="@+id/textEquation"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textEquation"
+            android:text="@string/input_condition" />
 
         <Spinner
             android:id="@+id/spinnerSubstance"
@@ -34,13 +34,13 @@
             android:id="@+id/textSubstanceChoose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/spinnerConditionType"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textInputCondition"
             android:gravity="center_vertical"
             android:text="@string/substance_choose"
-            android:textAllCaps="false"
-            android:layout_above="@+id/spinnerConditionType" />
+            android:textAllCaps="false" />
 
         <TextView
             android:id="@+id/textConditionType"
@@ -50,18 +50,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textSubstanceChoose"
+            android:layout_toStartOf="@+id/spinnerSubstance"
             android:gravity="center_vertical"
-            android:text="@string/condition_type"
-            android:layout_toStartOf="@+id/spinnerSubstance" />
-
-        <Spinner
-            android:id="@+id/spinnerConditionType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/spinnerSubstance"
-            android:layout_toEndOf="@+id/textConditionType"
-            android:layout_toRightOf="@+id/textConditionType"
-            android:spinnerMode="dialog" />
+            android:text="@string/condition_type" />
 
         <TextView
             android:id="@+id/textEquation"
@@ -73,6 +64,72 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:text="[equation]" />
+
+        <Spinner
+            android:id="@+id/spinnerConditionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/spinnerSubstance"
+            android:layout_toEndOf="@+id/textSubstanceChoose"
+            android:layout_toRightOf="@+id/textSubstanceChoose"
+            android:spinnerMode="dialog" />
+
+        <Button
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_continue"
+            android:textAllCaps="false"
+            android:layout_below="@+id/textConditionValue"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/buttonCopyEquation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copy_equation"
+            android:textAllCaps="false"
+            android:layout_below="@+id/editConditionValue"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/buttonReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_return"
+            android:layout_below="@+id/editConditionValue"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textConditionValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editConditionValue"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textConditionType"
+            android:layout_toLeftOf="@+id/spinnerConditionType"
+            android:layout_toStartOf="@+id/spinnerConditionType"
+            android:gravity="center_vertical"
+            android:text="@string/condition_value" />
+
+        <EditText
+            android:id="@+id/editConditionValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/spinnerConditionType"
+            android:layout_toEndOf="@+id/textConditionType"
+            android:layout_toRightOf="@+id/textConditionType"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:text="0.25" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
