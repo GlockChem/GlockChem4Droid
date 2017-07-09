@@ -24,4 +24,7 @@
     <string name="_return">返回</string>
     <string name="equation_copied">方程式已复制到剪贴板！</string>
     <string name="condition_value">条件数值：</string>
+    <string name="title_activity_calculation_output">计算结果</string>
+    <string name="copy_output">复制输出</string>
+    <string name="new_calculation">新方程式</string>
 </resources>

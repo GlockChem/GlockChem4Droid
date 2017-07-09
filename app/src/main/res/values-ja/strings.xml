@@ -24,4 +24,7 @@
     <string name="substance_choose">物質：</string>
     <string name="confirm">OK</string>
     <string name="clear_success">クリアOK。</string>
+    <string name="title_activity_calculation_output">Calculation Output</string>
+    <string name="copy_output">Copy Output</string>
+    <string name="new_calculation">New Equation</string>
 </resources>

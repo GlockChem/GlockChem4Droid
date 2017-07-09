@@ -23,4 +23,7 @@
     <string name="_return">Go Back</string>
     <string name="equation_copied">Equation copied!</string>
     <string name="condition_value">Value:</string>
+    <string name="title_activity_calculation_output">Calculation Output</string>
+    <string name="copy_output">Copy Output</string>
+    <string name="new_calculation">New Equation</string>
 </resources>

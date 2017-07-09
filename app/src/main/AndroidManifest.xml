@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ConditionInput"></activity>
+        <activity android:name=".ui.ConditionInput" />
+        <activity
+            android:name=".ui.CalculationOutput"
+            android:label="@string/title_activity_calculation_output"></activity>
     </application>
 
 </manifest>
