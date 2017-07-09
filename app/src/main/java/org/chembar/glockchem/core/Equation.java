@@ -76,7 +76,7 @@ public class Equation implements Serializable {
         // 避免输入为空
         if (strEquation.isEmpty()) {
             //TODO: 输入为空的处理
-            throw new Exception("输入为空");
+            throw new Exception("equation:empty-input");
         }
 
         // 避免重复分析
@@ -90,7 +90,7 @@ public class Equation implements Serializable {
             if (i == '=' || i == '-') {    // 出现 = 或 - 符号时判定为反应物结束
                 isRight = true;
                 if (bAuxFlag == true) {    // 若又出现一次分隔符，则判定为错误
-                    throw new Exception("出现多于一个的反应物-生成物分隔符");
+                    throw new Exception("equation:multi-part");
                 }
                 continue;
             } else if (i == ' ' || i == '>') {    // 忽略掉 ---> 格式中的 > 字符以及空白字符
@@ -110,7 +110,7 @@ public class Equation implements Serializable {
 
         // 现在分离到列表里
         if (partLeft.isEmpty() || partRight.isEmpty()) {
-            throw new Exception("所输入的反应物或生成物为空");
+            throw new Exception("equation:empty-side");
         }
 
         boolean isStarting = true;    // 标志：是否是化学式的开头
@@ -129,7 +129,7 @@ public class Equation implements Serializable {
                     }
 
                     if (i == '+') {    // 防止开头就遇到"+"号的垃圾情况
-                        throw new Exception("列表开头遇到空白项");
+                        throw new Exception("equation:empty-first-item");
                     }
 
                     strTempB += String.valueOf(i);    // 将本个字符塞入化学式存储器
@@ -137,7 +137,7 @@ public class Equation implements Serializable {
             } else {    // 若非化学式的开头
                 if (i == '+') {    // 若为"+"号
                     if (strTempB.isEmpty() || strTempA.isEmpty()) { // 防止化学式或系数为空时加入列表
-                        throw new Exception("Equation::parseFormulaList: 列表内遇到空白项");
+                        throw new Exception("equation:empty-inner-item");
                     } else {
                         this.reactant.add(new Pair<Formula, Integer>(new Formula(strTempB), new Integer(strTempA)));
                         // 初始化状态
@@ -176,7 +176,7 @@ public class Equation implements Serializable {
                     }
 
                     if (i == '+') {    // 防止开头就遇到"+"号的垃圾情况
-                        throw new Exception("列表开头遇到空白项");
+                        throw new Exception("equation:empty-first-item");
                     }
 
                     strTempB += String.valueOf(i);    // 将本个字符塞入化学式存储器
@@ -184,7 +184,7 @@ public class Equation implements Serializable {
             } else {    // 若非化学式的开头
                 if (i == '+') {    // 若为"+"号
                     if (strTempB.isEmpty() || strTempA.isEmpty()) { // 防止化学式或系数为空时加入列表
-                        throw new Exception("Equation::parseFormulaList: 列表内遇到空白项");
+                        throw new Exception("equation:empty-inner-item");
                     } else {
                         this.product.add(new Pair<Formula, Integer>(new Formula(strTempB), new Integer(strTempA)));
                         // 初始化状态

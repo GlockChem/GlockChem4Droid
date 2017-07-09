@@ -14,4 +14,9 @@
     <string name="balance_failed">无法配平方程式！</string>
     <string name="condition_type_mass">质量 (g)</string>
     <string name="condition_type_mole">物质的量 (mol)</string>
+    <string name="equation_empty_imput">所输入的方程式为空！</string>
+    <string name="equation_multi_part">方程式应有且仅有两侧！</string>
+    <string name="equation_empty_side">所输入的反应物或生成物为空</string>
+    <string name="equation_empty_first_item">列表开头遇到空白项！</string>
+    <string name="equation_empty_inner_item">列表内遇到空白项！</string>
 </resources>

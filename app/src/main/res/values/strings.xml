@@ -13,4 +13,9 @@
     <string name="balance_failed">Failed to balance the equation!</string>
     <string name="condition_type_mass">Mass (g)</string>
     <string name="condition_type_mole">Mole (mol)</string>
+    <string name="equation_empty_imput">You have input nothing!</string>
+    <string name="equation_multi_part">There are only two sides of an equation!</string>
+    <string name="equation_empty_side">Either side of the equation input is empty!</string>
+    <string name="equation_empty_first_item">The first item of one side is empty!</string>
+    <string name="equation_empty_inner_item">One inner item of one side is empty!</string>
 </resources>

@@ -60,8 +60,24 @@ public class EquationInput extends AppCompatActivity {
                     intent.putExtra("equation", equation);
                     startActivity(intent);
                 } catch (Exception e) {
+                    String strErr = e.getMessage();
+                    String strErrDisp;
+                    // Equation异常信息的本地化
+                    if (strErr.equals("equation:empty-input")) {
+                        strErrDisp = getString(R.string.equation_empty_imput);
+                    } else if (strErr.equals("equation:multi-part")) {
+                        strErrDisp = getString(R.string.equation_multi_part);
+                    } else if (strErr.equals("equation:empty-side")) {
+                        strErrDisp = getString(R.string.equation_empty_side);
+                    } else if (strErr.equals("equation:empty-first-item")) {
+                        strErrDisp = getString(R.string.equation_empty_first_item);
+                    } else if (strErr.equals("equation:empty-inner-item")) {
+                        strErrDisp = getString(R.string.equation_empty_inner_item);
+                    } else {
+                        strErrDisp = strErr;
+                    }
                     // 输出错误信息
-                    Toast.makeText(EquationInput.this, getString(R.string.parse_error).replace("[errinfo]", e.getMessage()), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EquationInput.this, getString(R.string.parse_error).replace("[errinfo]", strErrDisp), Toast.LENGTH_SHORT).show();
                 }
             }
         });
