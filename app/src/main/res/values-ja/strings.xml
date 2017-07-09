@@ -7,5 +7,21 @@
     <string name="clear_success">正常にクリアされました。</string>
     <string name="equation_hint">化学反応式：[equation]</string>
     <string name="_continue">次へ</string>
-    <string name="_return"></string>
+    <string name="_return">戻る</string>
+    <string name="balance_failed">反応式のバランスをとることができませんでした！</string>
+    <string name="condition_type">条件：</string>
+    <string name="condition_type_mass">質量 (グラム)</string>
+    <string name="condition_type_mole">物質の量 (モル)</string>
+    <string name="condition_value">数値：</string>
+    <string name="copy_equation">反応式をコピー</string>
+    <string name="equation_copied">反応式がコピーされました！</string>
+    <string name="equation_empty_first_item">片面の最初の項目は空です！</string>
+    <string name="equation_empty_imput">何も入力していない！</string>
+    <string name="equation_empty_inner_item">片側の1つの項目が空です！</string>
+    <string name="equation_empty_side">入力反応式の片方が空です！</string>
+    <string name="equation_multi_part">反応式の2つの側面しかありません！</string>
+    <string name="input_condition">物質を選択し、計算する条件を指定する：</string>
+    <string name="parse_error">解析エラー: [errinfo]</string>
+    <string name="parse_success">反応式を正常に解析しました！</string>
+    <string name="substance_choose">物質：</string>
 </resources>

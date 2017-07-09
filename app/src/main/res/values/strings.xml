@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name" translatable="false">GlockChem4Droid</string>
+    <string name="app_name">GlockChem4Droid</string>
     <string name="input_equation">Input reaction equation:</string>
     <string name="confirm">Confirm</string>
     <string name="clear">Clear</string>
     <string name="clear_success">Successfully cleared!</string>
-    <string name="parse_error">Parse error: [errinfo]</string>
+    <string name="parse_error">Parsing error: [errinfo]</string>
     <string name="parse_success">Successfully parsed the equation!</string>
     <string name="input_condition">Choose a substance and specify condition to calculate:</string>
     <string name="substance_choose">Substance:</string>
@@ -15,7 +15,7 @@
     <string name="condition_type_mole">Mole (mol)</string>
     <string name="equation_empty_imput">You have input nothing!</string>
     <string name="equation_multi_part">There are only two sides of an equation!</string>
-    <string name="equation_empty_side">Either side of the equation input is empty!</string>
+    <string name="equation_empty_side">One side of the equation input is empty!</string>
     <string name="equation_empty_first_item">The first item of one side is empty!</string>
     <string name="equation_empty_inner_item">One inner item of one side is empty!</string>
     <string name="_continue">Continue</string>
