@@ -1,21 +1,25 @@
 package org.chembar.glockchem.ui;
 
-import android.text.ClipboardManager;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.ClipboardManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.chembar.glockchem.R;
+import org.chembar.glockchem.core.AdvNum;
 import org.chembar.glockchem.core.Equation;
+import org.chembar.glockchem.core.EquationCalculator;
 import org.chembar.glockchem.core.Formula;
 import org.chembar.glockchem.core.Pair;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ConditionInput extends AppCompatActivity {
@@ -82,7 +86,61 @@ public class ConditionInput extends AppCompatActivity {
             });
         }
 
-        // TODO: 继续按钮
+        // 继续按钮
+        {
+            Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
+            buttonContinue.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 确定被选项
+                    Pair<Formula, Integer> pairCondition;
+                    {
+                        Spinner spinnerSubstance = (Spinner) findViewById(R.id.spinnerSubstance);
+                        int pos = spinnerSubstance.getSelectedItemPosition();
+                        if (pos < nReactants) {
+                            pairCondition = equInner.reactant.get(pos);
+                        } else {
+                            pairCondition = equInner.product.get(pos - nReactants);
+                        }
+                    }
+
+                    // 获取输入数值
+                    AdvNum numInput;
+                    {
+                        EditText editConditionValue = (EditText) findViewById(R.id.editConditionValue);
+                        double numInputRaw = Double.parseDouble(editConditionValue.getText().toString());
+                        if (numInputRaw < 1e-7 && numInputRaw > -1e-7) {
+                            // 若为0则报错退出
+                            Toast.makeText(ConditionInput.this, getString(R.string.condition_zero), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        numInput = new AdvNum(numInputRaw);
+                    }
+
+                    // 建立计算条件
+                    EquationCalculator.EquationCondition equationCondition;
+                    {
+                        Spinner spinnerConditionType = (Spinner) findViewById(R.id.spinnerConditionType);
+
+                        // 判定条件类型
+                        if (spinnerConditionType.getSelectedItemPosition() == 0) {
+                            // 质量
+                            equationCondition = new EquationCalculator.EquationConditionMass(pairCondition, numInput);
+                        } else {
+                            // 摩尔
+                            equationCondition = new EquationCalculator.EquationConditionMole(pairCondition, numInput);
+                        }
+                    }
+
+                    // 调用计算输出屏幕
+                    Intent intent = new Intent(ConditionInput.this, CalculationOutput.class);
+                    intent.putExtra("equation", equInner);
+                    intent.putExtra("condition", (Serializable) equationCondition);
+                    startActivity(intent);
+                }
+            });
+        }
+
         // 返回按钮
         {
             Button buttonReturn = (Button) findViewById(R.id.buttonReturn);

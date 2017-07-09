@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,40 +11,63 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <EditText
-            android:id="@+id/editOutput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:editable="false"
-            android:ems="10"
-            android:gravity="top|left"
-            android:inputType="textMultiLine|textNoSuggestions"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_above="@+id/buttonCopyOutput" />
-
         <Button
             android:id="@+id/buttonCopyOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:text="@string/copy_output"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="-28dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/buttonCopyOutput"
+            android:scrollbarStyle="outsideInset">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/editOutput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:fontFamily="monospace"
+                    android:freezesText="true"
+                    android:gravity="top|left"
+                    android:imeOptions="actionNone|flagNoEnterAction"
+                    android:inputType="none|textMultiLine|textNoSuggestions"
+                    android:linksClickable="false"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="14sp"
+                    tools:editable="false"
+                    tools:focusable="false" />
+            </GridLayout>
+        </ScrollView>
 
         <Button
             android:id="@+id/buttonReset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:text="@string/new_calculation"
             android:textAllCaps="false" />
 
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

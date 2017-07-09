@@ -27,4 +27,8 @@
     <string name="title_activity_calculation_output">计算结果</string>
     <string name="copy_output">复制输出</string>
     <string name="new_calculation">新方程式</string>
+    <string name="output_copied">输出已复制到剪贴板！</string>
+    <string name="condition_zero">给定的条件数值不能为零！</string>
+    <string name="result_as_follows">计算结果如下：</string>
+    <string name="unknown_atom">未知原子：</string>
 </resources>

@@ -26,4 +26,8 @@
     <string name="title_activity_calculation_output">Calculation Output</string>
     <string name="copy_output">Copy Output</string>
     <string name="new_calculation">New Equation</string>
+    <string name="output_copied">Output copied!</string>
+    <string name="condition_zero">Condition value can\'t be zero!</string>
+    <string name="result_as_follows">Calculation result:</string>
+    <string name="unknown_atom">Unknown atom:</string>
 </resources>

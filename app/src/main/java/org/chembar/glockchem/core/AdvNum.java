@@ -1,12 +1,14 @@
 package org.chembar.glockchem.core;
 
+import java.io.Serializable;
+
 /**
  * AdvNum - 带误差计算的双精度类型
  *
  * @author DuckSoft
  * @version 0.1
  */
-public class AdvNum {
+public class AdvNum implements Serializable {
     // === 内部数据 ===
     /**
      * AdvNum的内部数值。
@@ -36,27 +38,6 @@ public class AdvNum {
     // === 类型转换 ===
 
     /**
-     * 将AdvNum对象转为String
-     *
-     * @return 所得String
-     */
-    public String toString() {
-        return "{" + String.valueOf(this.numInner) +
-                "; " + String.valueOf(this.numMin) +
-                ", " + String.valueOf(this.numMax) + "}";
-    }
-
-    /**
-     * 将AdvNum对象转为double
-     *
-     * @return AdvNum对象的内部数值{@link #numInner}
-     */
-    public double toDouble() {
-        return this.numInner;
-    }
-    // === 构造函数 ===
-
-    /**
      * 构造函数
      * <p>该构造函数可以构造一个空的AdvNum。</p>
      *
@@ -82,6 +63,7 @@ public class AdvNum {
     public AdvNum(double numIn) {
         this.numInner = this.numMax = this.numMin = numIn;
     }
+    // === 构造函数 ===
 
     /**
      * 构造函数
@@ -123,6 +105,26 @@ public class AdvNum {
         this.numInner = numCenter;
         this.numMin = numInMin;
         this.numMax = numInMax;
+    }
+
+    /**
+     * 将AdvNum对象转为String
+     *
+     * @return 所得String
+     */
+    public String toString() {
+        return "{" + String.valueOf(this.numInner) +
+                "; " + String.valueOf(this.numMin) +
+                ", " + String.valueOf(this.numMax) + "}";
+    }
+
+    /**
+     * 将AdvNum对象转为double
+     *
+     * @return AdvNum对象的内部数值{@link #numInner}
+     */
+    public double toDouble() {
+        return this.numInner;
     }
 
     // === 基本运算函数 ===
@@ -203,6 +205,10 @@ public class AdvNum {
     public AdvNum Centerize() {
         this.numInner = this.getCenterizedNumber();
         return this;
+    }
+
+    public double getNumInner() {
+        return this.numInner;
     }
 
     public double getNumMin() {

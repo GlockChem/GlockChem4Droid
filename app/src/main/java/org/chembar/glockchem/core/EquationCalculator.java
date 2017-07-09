@@ -2,6 +2,8 @@ package org.chembar.glockchem.core;
 
 import org.chembar.glockchem.core.RMDatabase.AtomNameNotFoundException;
 
+import java.io.Serializable;
+
 /**
  * 化学方程式计算类
  * <p>用作化学方程式的简单比值计算</p>
@@ -42,7 +44,7 @@ public final class EquationCalculator {
             // 未平衡，尝试使用高斯消元法配平
             if (balancer.balanceGaussian() == false) {
                 // 失败了
-                throw new Exception("这方程式配不平，怎么算啦！吃屎啦您！");
+                throw new Exception("equcalc:cannot-balance");
             }
         }
 
@@ -81,12 +83,37 @@ public final class EquationCalculator {
     }
 
     /**
+     * 计算条件
+     * <p>用于为{@link EquationCalculator}的计算提供条件。</p>
+     *
+     * @author DuckSoft
+     * @see EquationConditionMass
+     * @see EquationConditionMole
+     */
+    public interface EquationCondition {
+        /**
+         * 获取条件中的质量
+         */
+        AdvNum getConditionMass(RMDatabase rmDatabase) throws AtomNameNotFoundException;
+
+        /**
+         * 获取条件中的物质的量
+         */
+        AdvNum getConditionMole(RMDatabase rmDatabase) throws AtomNameNotFoundException;
+
+        /**
+         * 获取条件中的整个表项
+         */
+        Pair<Formula, Integer> getConditionItem();
+    }
+
+    /**
      * 计算条件（质量）
      * <p>用于为{@link EquationCalculator}的计算提供条件。</p>
      *
      * @author DuckSoft
      */
-    public final static class EquationConditionMass implements EquationCondition {
+    public final static class EquationConditionMass implements EquationCondition, Serializable {
         Pair<Formula, Integer> refItem;
         AdvNum massInner;
 
@@ -114,7 +141,7 @@ public final class EquationCalculator {
      *
      * @author DuckSoft
      */
-    public final static class EquationConditionMole implements EquationCondition {
+    public final static class EquationConditionMole implements EquationCondition, Serializable {
         Pair<Formula, Integer> refItem;
         AdvNum moleInner;
 
@@ -134,30 +161,5 @@ public final class EquationCalculator {
         public Pair<Formula, Integer> getConditionItem() {
             return this.refItem;
         }
-    }
-
-    /**
-     * 计算条件
-     * <p>用于为{@link EquationCalculator}的计算提供条件。</p>
-     *
-     * @author DuckSoft
-     * @see EquationConditionMass
-     * @see EquationConditionMole
-     */
-    public interface EquationCondition {
-        /**
-         * 获取条件中的质量
-         */
-        AdvNum getConditionMass(RMDatabase rmDatabase) throws AtomNameNotFoundException;
-
-        /**
-         * 获取条件中的物质的量
-         */
-        AdvNum getConditionMole(RMDatabase rmDatabase) throws AtomNameNotFoundException;
-
-        /**
-         * 获取条件中的整个表项
-         */
-        Pair<Formula, Integer> getConditionItem();
     }
 }
