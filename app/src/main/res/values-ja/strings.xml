@@ -2,9 +2,7 @@
 <resources>
     <string name="app_name">GlockChem4Droid</string>
     <string name="input_equation">化学反応式を入力してください：</string>
-    <string name="confirm">決定します</string>
     <string name="clear">クリア</string>
-    <string name="clear_success">正常にクリアされました。</string>
     <string name="equation_hint">化学反応式：[equation]</string>
     <string name="_continue">次へ</string>
     <string name="_return">戻る</string>
@@ -24,4 +22,6 @@
     <string name="parse_error">解析エラー: [errinfo]</string>
     <string name="parse_success">反応式を正常に解析しました！</string>
     <string name="substance_choose">物質：</string>
+    <string name="confirm">OK</string>
+    <string name="clear_success">クリアOK。</string>
 </resources>
