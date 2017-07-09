@@ -83,6 +83,16 @@ public class ConditionInput extends AppCompatActivity {
         }
 
         // TODO: 继续按钮
-        // TODO: 返回按钮
+        // 返回按钮
+        {
+            Button buttonReturn = (Button) findViewById(R.id.buttonReturn);
+            buttonReturn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ConditionInput.this.finish();
+                }
+            });
+        }
+
     }
 }
