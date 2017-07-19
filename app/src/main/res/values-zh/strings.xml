@@ -31,4 +31,5 @@
     <string name="condition_zero">给定的条件数值不能为零！</string>
     <string name="result_as_follows">计算结果如下：</string>
     <string name="unknown_atom">未知原子：</string>
+    <string name="menu_select">功能选单：</string>
 </resources>
