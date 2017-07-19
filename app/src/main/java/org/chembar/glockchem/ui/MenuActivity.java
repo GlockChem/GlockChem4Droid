@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,8 @@ public class MenuActivity extends AppCompatActivity {
     private static final int MENU_EQUATION = 0;
     private static final int MENU_ABOUT = 1;
     private static final int MENU_GITHUB = 2;
+    // 用于两次返回键退出的计时
+    private long mExitTime;
 
     // TODO: 图文并茂处理
     private List<String> getListData() {
@@ -61,5 +64,18 @@ public class MenuActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Toast.makeText(this, getString(R.string.double_back_to_exit), Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
