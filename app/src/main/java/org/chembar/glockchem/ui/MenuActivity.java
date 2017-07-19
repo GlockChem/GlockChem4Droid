@@ -52,7 +52,7 @@ public class MenuActivity extends AppCompatActivity {
                         break;
                     }
                     case MENU_ABOUT: {
-                        Toast.makeText(MenuActivity.this, "GlockChem4Droid\n\nCredit to GlockChem Project Team:\n - DuckSoft\n - LionNatsu\n - EAirPeter\n - NAP64\n...and more", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MenuActivity.this, "GlockChem4Droid\n\nCredit to GlockChem Project Team:\n - DuckSoft\n - LionNatsu\n - EAirPeter\n - NAP64\n...and more", Toast.LENGTH_LONG).show();
                         break;
                     }
                     case MENU_GITHUB: {
