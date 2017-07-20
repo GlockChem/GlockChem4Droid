@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import org.chembar.glockchem.R;
 import org.chembar.glockchem.ui.equcalc.EquationInput;
+import org.chembar.glockchem.ui.fmass.FormulaMass;
+import org.chembar.glockchem.ui.solution.SolutionMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +23,10 @@ public class MenuActivity extends AppCompatActivity {
 
     // NOTE: 这只是个makeshift
     private static final int MENU_EQUATION = 0;
-    private static final int MENU_ABOUT = 1;
-    private static final int MENU_GITHUB = 2;
+    private static final int MENU_FMASS = 1;
+    private static final int MENU_SOLUTION = 2;
+    private static final int MENU_ABOUT = 3;
+    private static final int MENU_GITHUB = 4;
     // 用于两次返回键退出的计时
     private long mExitTime;
 
@@ -30,6 +34,8 @@ public class MenuActivity extends AppCompatActivity {
     private List<String> getListData() {
         List<String> list = new ArrayList<>();
         list.add("方程式配平与计算");
+        list.add("式量计算");
+        list.add("溶液配制助手");
         list.add("关于本程序...");
         list.add("访问项目GitHub");
 
@@ -60,6 +66,16 @@ public class MenuActivity extends AppCompatActivity {
                         startActivity(new Intent()
                                 .setAction("android.intent.action.VIEW")
                                 .setData(Uri.parse("https://github.com/GlockChem/GlockChem4Droid")));
+                        break;
+                    }
+                    case MENU_FMASS: {
+                        Intent intent = new Intent(MenuActivity.this, FormulaMass.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case MENU_SOLUTION: {
+                        Intent intent = new Intent(MenuActivity.this, SolutionMenu.class);
+                        startActivity(intent);
                         break;
                     }
                 }
