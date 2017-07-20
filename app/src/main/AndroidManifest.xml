@@ -32,6 +32,10 @@
             android:name=".ui.fmass.FormulaMass"
             android:label="@string/title_activity_formula_mass"
             android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.solution.SolutionMenu"
+            android:label="@string/title_activity_solution_menu"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>
