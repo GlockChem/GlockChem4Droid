@@ -33,4 +33,5 @@
     <string name="unknown_atom">Unknown atom:</string>
     <string name="menu_select">Select a function:</string>
     <string name="double_back_to_exit">Tap \'Back\' key once more to exit.</string>
+    <string name="title_activity_formula_mass">Formula Mass Calculator</string>
 </resources>

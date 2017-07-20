@@ -28,6 +28,10 @@
         <activity
             android:name=".ui.equcalc.EquationInput"
             android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.fmass.FormulaMass"
+            android:label="@string/title_activity_formula_mass"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>
