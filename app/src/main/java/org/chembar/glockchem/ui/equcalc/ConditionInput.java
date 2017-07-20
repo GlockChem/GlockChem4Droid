@@ -1,4 +1,4 @@
-package org.chembar.glockchem.ui;
+package org.chembar.glockchem.ui.equcalc;
 
 import android.content.Intent;
 import android.os.Bundle;

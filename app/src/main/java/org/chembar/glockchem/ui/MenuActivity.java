@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import org.chembar.glockchem.R;
+import org.chembar.glockchem.ui.equcalc.EquationInput;
 
 import java.util.ArrayList;
 import java.util.List;

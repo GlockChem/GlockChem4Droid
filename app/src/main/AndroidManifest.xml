@@ -19,14 +19,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.ConditionInput"
+            android:name=".ui.equcalc.ConditionInput"
             android:launchMode="singleTask" />
         <activity
-            android:name=".ui.CalculationOutput"
+            android:name=".ui.equcalc.CalculationOutput"
             android:label="@string/title_activity_calculation_output"
             android:launchMode="singleTask" />
         <activity
-            android:name=".ui.EquationInput"
+            android:name=".ui.equcalc.EquationInput"
             android:launchMode="singleTask" />
     </application>
 
