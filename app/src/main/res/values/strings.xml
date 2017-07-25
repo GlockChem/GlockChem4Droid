@@ -34,4 +34,5 @@
     <string name="double_back_to_exit">Tap \'Back\' key once more to exit.</string>
     <string name="title_activity_formula_mass">Formula Mass Calculator</string>
     <string name="title_activity_solution_menu">Solution Helper</string>
+    <string name="input_formula">Input formula:</string>
 </resources>

@@ -35,4 +35,5 @@
     <string name="double_back_to_exit">再按一次返回键退出</string>
     <string name="title_activity_formula_mass">式量计算</string>
     <string name="title_activity_solution_menu">溶液配制助手</string>
+    <string name="input_formula">输入化学式：</string>
 </resources>
