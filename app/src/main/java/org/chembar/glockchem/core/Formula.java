@@ -15,19 +15,31 @@ import java.util.regex.Pattern;
 public class Formula implements Serializable {
 
     /**
-     * 化学式原始字符串
-     * <p>包含该Formula类初始化时传入的表示该化学式的String。</p>
-     *
-     * @see #Formula(String)
-     */
-    String strRaw;
-    /**
      * 化学式原子清单
      * <p>包含从Formula初始化时传入的String中分析得到的该化学式含有的所有原子及其数目的配对的列表。</p>
      *
      * @see #Formula(String)
      */
     public Map<String, Integer> mapAtomList = new HashMap<String, Integer>();
+    /**
+     * 化学式原始字符串
+     * <p>包含该Formula类初始化时传入的表示该化学式的String。</p>
+     *
+     * @see #Formula(String)
+     */
+    String strRaw;
+
+    /**
+     * 构造函数
+     * <p>从传入的化学式String中构建Formula。</p>
+     *
+     * @param inFormula 表示该化学式的String
+     * @see #strRaw
+     */
+    public Formula(String inFormula) throws Exception {
+        this.strRaw = inFormula;
+        this.parseFormula(inFormula, 1);
+    }
 
     /**
      * 获取化学式原始字符串
@@ -42,33 +54,6 @@ public class Formula implements Serializable {
 
     public String toString() {
         return this.mapAtomList.toString();
-    }
-
-    // 异常类
-    public class InvalidFormulaException extends Exception {
-        private static final long serialVersionUID = 2L;
-        String formula;
-
-        InvalidFormulaException(String inStr) {
-            this.formula = inStr;
-        }
-
-        public String getFormulaString() {
-            return this.formula;
-        }
-    }
-
-    /**
-     * 构造函数
-     * <p>从传入的化学式String中构建Formula。</p>
-     *
-     * @param inFormula 表示该化学式的String
-     * @throws InvalidFormulaException
-     * @see #strRaw
-     */
-    public Formula(String inFormula) throws InvalidFormulaException {
-        this.strRaw = inFormula;
-        this.parseFormula(inFormula, 1);
     }
 
     /**
@@ -94,9 +79,8 @@ public class Formula implements Serializable {
      *
      * @param inFormula     要分析的String
      * @param numMultiplier 该段String原子数前的系数
-     * @throws InvalidFormulaException
      */
-    private void parseFormula(String inFormula, int numMultiplier) throws InvalidFormulaException {
+    private void parseFormula(String inFormula, int numMultiplier) throws Exception {
         Matcher sm;    // 正则匹配结果
 
         Pattern e = Pattern.compile("^([A-Z][a-z]*)(\\d*)"),    // 原子匹配正则
@@ -196,7 +180,7 @@ public class Formula implements Serializable {
                     this.parseFormula(strTemp, tempNum);
                 }
             } else {
-                throw new InvalidFormulaException("化学式中发现非法字符 - " + inFormula.substring(0, 1));
+                throw new Exception("formula:invalid_char");
             }
         }
     }
