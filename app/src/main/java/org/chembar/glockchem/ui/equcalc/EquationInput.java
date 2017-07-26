@@ -3,6 +3,8 @@ package org.chembar.glockchem.ui.equcalc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +13,9 @@ import android.widget.Toast;
 import org.chembar.glockchem.R;
 import org.chembar.glockchem.core.Equation;
 import org.chembar.glockchem.core.EquationBalancer;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EquationInput extends AppCompatActivity {
 
@@ -27,6 +32,19 @@ public class EquationInput extends AppCompatActivity {
                 txtEquation.setText(null);
                 Toast.makeText(EquationInput.this, getString(R.string.clear_success), Toast.LENGTH_SHORT).show();
             }
+        });
+
+        ((EditText) findViewById(R.id.editEquation)).setFilters(new InputFilter[]{
+                new InputFilter() {
+                    // NOTE: 将来Equation更新时此处也需要更新
+                    Pattern p = Pattern.compile("[^a-zA-Z0-9()\\-=>+*]");
+
+                    @Override
+                    public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                        Matcher m = p.matcher(source);
+                        return m.replaceAll("");
+                    }
+                }
         });
 
         Button btnConfirm = (Button) findViewById(R.id.buttonConfirm);
