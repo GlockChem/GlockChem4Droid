@@ -36,4 +36,6 @@
     <string name="title_activity_formula_mass">式量计算</string>
     <string name="title_activity_solution_menu">溶液配制助手</string>
     <string name="input_formula">输入化学式：</string>
+    <string name="err_empty_input">错误：输入为空！</string>
+    <string name="formula_parse_failed">化学式分析失败。</string>
 </resources>
