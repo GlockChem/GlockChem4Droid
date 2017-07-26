@@ -121,11 +121,9 @@ public class Formula implements Serializable {
                     inFormula = inFormula.substring(sm.group(0).length());
                     this.parseFormula(strTemp, tempNum);
                 } else {// 空段的处理
-                    //TODO: 空段
+                    throw new Exception("formula:empty_segment");
                 }
             } else if (inFormula.charAt(0) == '(') {
-                // TODO: 括号的处理
-
                 int intCounter = 0; // 第一次出现后半括号前 前半括号出现的次数
 
                 for (char ch : inFormula.toCharArray()) {
